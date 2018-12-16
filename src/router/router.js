@@ -26,9 +26,9 @@ export default new Router({
         {
           path: 'exchange',
           name: 'Exchange',
-          component: Exchange
-        }
-      ]
+          component: Exchange,
+        },
+      ],
     },
     {
       path: '/admin',
@@ -39,24 +39,24 @@ export default new Router({
         {
           path: 'transactions',
           name: 'Transactions',
-          component: Transactions
+          component: Transactions,
         },
         {
           path: 'transactions/:id',
           name: 'Transaction',
-          component: Transaction
+          component: Transaction,
         },
         {
           path: 'users',
           name: 'Users',
-          component: Users
+          component: Users,
         },
         {
           path: 'users/:id',
           name: 'User',
-          component: User
-        }
-      ]
-    }
-  ]
+          component: User,
+        },
+      ],
+    },
+  ],
 })

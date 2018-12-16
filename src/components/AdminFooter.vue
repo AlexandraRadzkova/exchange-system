@@ -8,7 +8,7 @@
             <div class="row">
               <div class="col-sm-6">
 
-                <p class="copyright-text">© Система обмена 2018</p>
+                <p class="copyright-text">© Exchange System 2017</p>
 
               </div>
               <div class="col-sm-6 adminAccessBtn-col">

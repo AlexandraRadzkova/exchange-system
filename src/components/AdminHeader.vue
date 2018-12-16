@@ -6,6 +6,7 @@
 
           <b-navbar type="dark" toggleable>
             <b-navbar-toggle target="nav_dropdown_collapse"></b-navbar-toggle>
+            <b-navbar-brand to="/admin" exact></b-navbar-brand>
             <b-collapse is-nav id="nav_dropdown_collapse">
               <b-navbar-nav>
                 <b-nav-item to="/admin/transactions">Транзакции</b-nav-item>
@@ -28,3 +29,9 @@
     name: 'AdminHeader'
   }
 </script>
+
+<style lang="sass">
+  .main-header
+    .navbar-brand
+      background-image: url("../assets/img/logo.svg")
+</style>

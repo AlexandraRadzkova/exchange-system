@@ -1,44 +1,43 @@
 <template>
   <div class="container">
-
     <div class="row">
-      <div class="col-xl-1"></div>
       <div class="col-xl-6">
-
-        <ExchangeForm :currencies="currencies" />
-
+        <ExchangeForm :currencies="currencies"/>
       </div>
-      <div class="col-xl-4">
-
-        <Sidebar :currencies="currencies" />
-
+      <div class="col-xl-5">
+        <Sidebar :currencies="currencies"/>
       </div>
     </div>
 
+    <AuthModal/>
   </div>
 </template>
 
 <script>
-  import { Sidebar } from '../components'
-  import ExchangeForm from './components/Exchange/ExchangeForm'
+import { Sidebar } from '../components'
 
-  export default {
-    name: 'Exchange',
+import ExchangeForm from './components/Exchange/ExchangeForm'
+import AuthModal from './components/Exchange/AuthModal'
 
-    data () {
-      return {
-        currencies: [
-          { value: 'byn', text: 'BYN' },
-          { value: 'usd', text: 'USD' },
-          { value: 'eur', text: 'EUR' },
-          { value: 'btc', text: 'BTC' }
-        ]
-      }
-    },
+export default {
+  name: 'Exchange',
 
-    components: {
-      Sidebar,
-      ExchangeForm
+  data() {
+    return {
+      currencies: null,
     }
-  }
+  },
+
+  mounted() {
+    this.axios.get('/currencies').then((resp) => {
+      this.currencies = resp.data
+    })
+  },
+
+  components: {
+    Sidebar,
+    ExchangeForm,
+    AuthModal,
+  },
+}
 </script>

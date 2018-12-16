@@ -3,40 +3,100 @@
 @import "vars"
 @import "base"
 
-// Styles fo here
+html
+  height: 100%
+  body
+    min-height: 100%
+
+// Header
 .main-header
   margin-bottom: 50px
-  background-color: #d42a2a
+  background-color: #007BFF
+  .navbar-brand
+    display: inline-block
+    width: 145px
+    height: 50px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center center
 
+
+// Main
+$headerHeight: 66px
+$headerMarginY: 50px
+
+$footerHeight: 38px
+$footerMarginY: 50px
+
+.main
+  min-height: calc(100vh - #{$headerHeight} - #{$headerMarginY} - #{$footerHeight} - #{$footerMarginY})
+  margin-bottom: 50px
+  .container
+    .row
+      justify-content: center
+
+
+// Exchnage
 .exchange-form
   .card
     .card-body
       padding: 25px 70px 30px
 
+.exchange-cheque
+  position: relative
+  .cheque-close
+    position: absolute
+    top: 10px
+    right: 10px
+    cursor: pointer
+    i
+      font-size: 20px
+      color: #EB3941
+  .cheque-exchange-currency
+    text-align: center
+    font-size: 20px
+    .card-body
+      padding: 10px
+    .exch-sum
+      font-weight: bold
+      display: inline-block
+
+
+// Transactions
 .transactions-table
   tbody
     tr
       cursor: pointer
-.users-table
-  tbody
-    tr
-      cursor: pointer
-
-ul.transaction-summary-list
-  li
-    font-size: 1.25rem
 
 #iconBetweenTransactionCurrencies
   position: relative
   top: 20px
 
+ul.transaction-summary-list
+  li
+    font-size: 1.25rem
+
+
+// Users
+.users-table
+  tbody
+    tr
+      cursor: pointer
+
 ul.user-summary-list
   li
     font-size: 1.25rem
 
+
+// Footer
 .main-footer
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
   margin-top: 50px
   background-color: #34383C
+  z-index: 999
   .footer-wrapper
     padding-left: 30px
   .copyright-text
@@ -47,5 +107,6 @@ ul.user-summary-list
     text-align: right
   #adminAccessBtn
     border-radius: 0
+
 
 @import "media"
